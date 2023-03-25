@@ -1,17 +1,10 @@
-import React from 'react';
-
-import viteLogo from '/vite.svg';
-
-import * as S from './styles';
+import React from "react";
 
 const PageExample = () => {
   return (
-    <S.Container>
-      <S.Content>
-        <img src={viteLogo} alt="Vite logo" />
-        oioioioi
-      </S.Content>
-    </S.Container>
+    <div>
+      <h1>oi</h1>
+    </div>
   );
 };
 

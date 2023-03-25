@@ -1,7 +1,9 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "node": true,
+    "es2021": true,
+    "jest/globals": true
   },
   "settings": {
     "react": {
@@ -12,24 +14,67 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended"
+    // "prettier"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier", "eslint-plugin-import-helpers"],
+  "plugins": [
+    "react",
+    "jest",
+    "react-hooks",
+    "prettier",
+    "@typescript-eslint",
+    "eslint-plugin-import-helpers"
+  ],
   "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "jest/no-disabled-tests": "warn",
+    "object-curly-spacing": ["error", "always"],
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-empty-interface": "off",
-    "prettier/prettier": "error",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          "Boolean": {
+            "message": "Avoid using the `Boolean` type. Use `boolean` instead."
+          },
+          "Number": {
+            "message": "Avoid using the `Number` type. Use `number` instead."
+          },
+          "String": {
+            "message": "Avoid using the `String` type. Use `string` instead."
+          },
+          "Symbol": {
+            "message": "Avoid using the `Symbol` type. Use `symbol` instead."
+          },
+          "Object": {
+            "message": "Avoid using the `Object` type. Use `{}` instead."
+          },
+          "Function": {
+            "message": "Avoid using the `Function` type. Use a specific function type, like `() => void`, instead."
+          }
+        },
+        "extendDefaults": true
+      }
+    ],    
     "import-helpers/order-imports": [
       "warn",
       {
@@ -47,6 +92,7 @@
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
-    ]
+    ],
+    "prettier/prettier": "error"
   }
 }
