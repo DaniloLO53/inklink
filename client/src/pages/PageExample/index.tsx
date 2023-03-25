@@ -9,7 +9,7 @@ const PageExample = () => {
     <S.Container>
       <S.Content>
         <img src={viteLogo} alt="Vite logo" />
-        Boilerplate
+        oioioioi
       </S.Content>
     </S.Container>
   );
