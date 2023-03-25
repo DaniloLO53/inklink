@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "husky install",
-    "lint-server": "cd server && echo hi && eslint src --max-warnings=0",
-    "lint-client": "cd client && echo hi && eslint src --max-warnings=0",
+    "lint-server": "cd server && pwd && eslint src --max-warnings=0",
+    "lint-client": "cd client && npm run lint src --max-warnings=0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
@@ -17,9 +17,6 @@
   "lint-staged": {
     "client/src/**/*": [
       "npm run lint-client -- --fix"
-    ],
-    "server/src/**/*": [
-      "npm run lint-server -- --fix"
     ]
   },
   "repository": {
@@ -34,6 +31,7 @@
   },
   "homepage": "https://github.com/DaniloLO53/inklink#readme",
   "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3"
   }
 }
